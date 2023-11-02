@@ -15,6 +15,12 @@ public class DjeljivSaSumomCifara {
             }
         }
     }
+
+    /**
+     * Metoda sumaCifara sluzi za izracunavanje zbira cifara unutar broja zadanog parametrom
+     * @param n
+     * @return
+     */
     public static int sumaCifara(int n){
         int suma = 0;
         while(n!=0){
@@ -23,6 +29,13 @@ public class DjeljivSaSumomCifara {
         }
         return suma;
     }
+
+    /**
+     * Metoda DjeljivJe sluzi za provjeru da li je broj djeljiv sa sumom svojih cifara
+     * Ova metoda poziva metodu sumaCifara
+     * @param n
+     * @return
+     */
     public static boolean DjeljivJe(int n){
         int suma_cifara=sumaCifara(n);
         return n%suma_cifara==0;
