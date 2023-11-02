@@ -1,0 +1,13 @@
+Pravljenje ovog programa zahtjeva samo osnovno poznavanje nasljeđivanja i primjenu veoma jednostavne logike prikazane na šemi.
+Naime iz klase Osoba nasljeđujemo dvije klase: Uposlenik i Korisnik.
+
+Klasa Osoba ima dva atributa koja su naravno private, ali možemo im pridružiti getere i setere kako bi jednostavnije pristupali atributima iz nasljeđenih klasa. Također tu su trivijalne metode toString koja naravno vraća stringovnu implementaciju ime+prezime i metodu equals koja nam može zatrebati kasnije u programu. Tu je naravno i konstruktor koji postavlja vrijednosti zadane parametrima u atribute.
+
+Klasa Korisnik ima samo privatni atribut tipa Racun, konstruktor koji se vrlo lako implementira koristeći konstruktor bazne klase, te opet par trivijalnih metoda tipa dajRacun ili postaviRacun.
+
+Klasa Uposlenik je još kraća jer ima samo Konstruktor koji implementiramo također koristeći samo konstruktor bazne klase obzirom na parametre koje prima.
+
+Klasa Racun je nešto složenija jer ima nekoliko bitnih atributa za manipulisanje računom, ali se također implementacija svake metode izvodi u par linija koda. U ovoj klasi sam izmijenio povratni tip metode IzvrsiUplatu jer nije potrebno da vraća bilo šta, obzirom da se uplata uvijek može izvršiti, pa i ako bi ostavili boolean metoda bi uvijek vraćala true. Kod IzvrsiIsplatu je malo drugačija situacija, ona ostaje boolean jer može vratiti false ako se ne može izvršiti isplata zbog nedostatka sredstava na računu. Ostale metode su uglavnom trivijalni geteri i seteri.
+
+Klasa Banka ima dvije liste kao atribute, jer je njena osnovna namjena registrovanje korisnika. Metode su uglavnom tipa kreiraj i jako su jednostavne za implementaciju. U ovoj klasi u metodi kreirajRacunZaKorisnika koristimo u petlji i metodu equals koju smo ranije spomenuli, tako da je dobro što smo je implementirali. 
+
