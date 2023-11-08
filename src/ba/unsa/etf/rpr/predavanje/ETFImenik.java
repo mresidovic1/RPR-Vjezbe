@@ -1,6 +1,5 @@
 package ba.unsa.etf.rpr.predavanje;
 
-import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
