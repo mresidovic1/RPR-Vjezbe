@@ -6,3 +6,5 @@ Laptop{brend='Lenovo', model='IdeaPad', cijena=1500.0, ram=8, hdd=500, ssd=256, 
 Laptop{brend='Lenovo', model='IdeaPad', cijena=1500.0, ram=8, hdd=500, ssd=256, procesor='i5', grafickaKartica='AMD Radeon', velicinaEkrana=15.6}
 Laptop{brend='Dell', model='Inspiron', cijena=1200.0, ram=8, hdd=512, ssd=256, procesor='Intel i5', grafickaKartica='Nvidia GTX 1050', velicinaEkrana=15.6}
 Laptop{brend='HP', model='Pavilion', cijena=900.0, ram=12, hdd=256, ssd=256, procesor='AMD Ryzen 7', grafickaKartica='AMD Radeon 10', velicinaEkrana=14.0}
+Laptop{brend='Dell', model='Inspiron', cijena=1200.0, ram=8, hdd=512, ssd=256, procesor='Intel i5', grafickaKartica='Nvidia GTX 1050', velicinaEkrana=15.6}
+Laptop{brend='HP', model='Pavilion', cijena=900.0, ram=12, hdd=256, ssd=256, procesor='AMD Ryzen 7', grafickaKartica='AMD Radeon 10', velicinaEkrana=14.0}
