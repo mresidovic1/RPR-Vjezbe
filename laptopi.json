@@ -1,0 +1,11 @@
+{
+  "brend" : "HP",
+  "model" : "Pavilion",
+  "cijena" : 900.0,
+  "ram" : 12,
+  "hdd" : 256,
+  "ssd" : 256,
+  "procesor" : "AMD Ryzen 7",
+  "grafickaKartica" : "AMD Radeon 10",
+  "velicinaEkrana" : 14.0
+}

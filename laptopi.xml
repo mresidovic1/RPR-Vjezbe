@@ -1,0 +1,11 @@
+<Laptop>
+  <brend>HP</brend>
+  <model>Pavilion</model>
+  <cijena>900.0</cijena>
+  <ram>12</ram>
+  <hdd>256</hdd>
+  <ssd>256</ssd>
+  <procesor>AMD Ryzen 7</procesor>
+  <grafickaKartica>AMD Radeon 10</grafickaKartica>
+  <velicinaEkrana>14.0</velicinaEkrana>
+</Laptop>
