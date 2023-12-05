@@ -3,39 +3,38 @@ package com.example.digitron;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class DigitronController {
     @FXML
-    private Button Btn0;
+    private Button btn0;
 
     @FXML
-    private Button Btn1;
+    private Button btn1;
 
     @FXML
-    private Button Btn2;
+    private Button btn2;
 
     @FXML
-    private Button Btn3;
+    private Button btn3;
 
     @FXML
-    private Button Btn4;
+    private Button btn4;
 
     @FXML
-    private Button Btn5;
+    private Button btn5;
 
     @FXML
-    private Button Btn6;
+    private Button btn6;
 
     @FXML
-    private Button Btn7;
+    private Button btn7;
 
     @FXML
-    private Button Btn8;
+    private Button btn8;
 
     @FXML
-    private Button Btn9;
+    private Button btn9;
 
     @FXML
     private Button BtnDot;
@@ -61,9 +60,93 @@ public class DigitronController {
     @FXML
     private Button plusBtn;
 
+    double rs=0;
+    double n1;
+    double n2;
+    char op;
+    int point;
 
     @FXML
     private void calculation(ActionEvent event){
+        if(event.getSource()== btn1){
+            display.appendText("1");
+        }
+        else if(event.getSource()== btn2){
+            display.appendText("2");
+        }
+        else if(event.getSource()== btn3){
+            display.appendText("3");
+        }
+        else if(event.getSource()== btn4){
+            display.appendText("4");
+        }
+        else if(event.getSource()== btn5){
+            display.appendText("5");
+        }
+        else if(event.getSource()== btn6){
+            display.appendText("6");
+        }
+        else if(event.getSource()== btn7){
+            display.appendText("7");
+        }
+        else if(event.getSource()== btn8){
+            display.appendText("8");
+        }
+        else if(event.getSource()== btn9){
+            display.appendText("9");
+        }
+        else if(event.getSource()== btn0){
+            display.appendText("0");
+        }
+        else if(event.getSource()==BtnDot && point==0){
+            display.appendText(".");
+            point=1;
+        }
+        else if(event.getSource()==plusBtn){
+            n1=Double.parseDouble(display.getText());
+            display.setText("");
+            op='+';
+            point=0;
+        }
+        else if(event.getSource()==minusBtn){
+            n1=Double.parseDouble(display.getText());
+            display.setText("");
+            op='-';
+            point=0;
+        }
+        else if(event.getSource()==modBtn){
+            n1=Double.parseDouble(display.getText());
+            display.setText("");
+            op='%';
+            point=0;
+        }
+        else if(event.getSource()==multBtn){
+            n1=Double.parseDouble(display.getText());
+            display.setText("");
+            op='*';
+            point=0;
+        }
+        else if(event.getSource()==divBtn){
+            n1=Double.parseDouble(display.getText());
+            display.setText("");
+            op='/';
+            point=0;
+        }
+        else if(event.getSource()==equalsBtn){
+            n2=Double.parseDouble(display.getText());
+            switch(op) {
+                case '+' : rs=n1+n2; break;
+                case '-' : rs=n1-n2; break;
+                case '%' : rs=n1%n2; break;
+                case '/' : rs=n1/n2; break;
+                case '*' : rs=n1*n2; break;
+                default : display.setText("Error");
+            }
+            display.setText(String.valueOf(rs));
+        }
+
+
     }
+
 
 }
