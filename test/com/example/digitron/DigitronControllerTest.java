@@ -18,7 +18,7 @@ class DigitronControllerTest {
 
     @Start
     public void start (Stage stage) throws Exception {
-        Parent mainNode = FXMLLoader.load(getClass().getResource("fxml/digitron.fxml"));
+        Parent mainNode = FXMLLoader.load(getClass().getResource("digitron.fxml"));
         stage.setScene(new Scene(mainNode));
         stage.show();
         stage.toFront();
@@ -104,6 +104,4 @@ class DigitronControllerTest {
         robot.clickOn("#btn0");
         assertEquals("10", display.getText());
     }
-
-
 }

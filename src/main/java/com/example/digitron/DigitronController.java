@@ -3,9 +3,14 @@ package com.example.digitron;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class DigitronController {
+
+    @FXML
+    public Label display;
+
     @FXML
     private Button btn0;
 
@@ -37,10 +42,7 @@ public class DigitronController {
     private Button btn9;
 
     @FXML
-    private Button BtnDot;
-
-    @FXML
-    private TextField display;
+    private Button dotBtn;
 
     @FXML
     private Button divBtn;
@@ -67,85 +69,52 @@ public class DigitronController {
     int point;
 
     @FXML
-    private void calculation(ActionEvent event){
-        if(event.getSource()== btn1){
-            display.appendText("1");
-        }
-        else if(event.getSource()== btn2){
-            display.appendText("2");
-        }
-        else if(event.getSource()== btn3){
-            display.appendText("3");
-        }
-        else if(event.getSource()== btn4){
-            display.appendText("4");
-        }
-        else if(event.getSource()== btn5){
-            display.appendText("5");
-        }
-        else if(event.getSource()== btn6){
-            display.appendText("6");
-        }
-        else if(event.getSource()== btn7){
-            display.appendText("7");
-        }
-        else if(event.getSource()== btn8){
-            display.appendText("8");
-        }
-        else if(event.getSource()== btn9){
-            display.appendText("9");
-        }
-        else if(event.getSource()== btn0){
-            display.appendText("0");
-        }
-        else if(event.getSource()==BtnDot && point==0){
-            display.appendText(".");
-            point=1;
-        }
-        else if(event.getSource()==plusBtn){
-            n1=Double.parseDouble(display.getText());
+    private void calculation(ActionEvent event) {
+        Button clickedButton = (Button) event.getSource();
+
+        if (clickedButton == dotBtn && point == 0) {
+            display.setText(display.getText() + ".");
+            point = 1;
+        } else if (isDigitButton(clickedButton)) {
+            handleDigitButton(clickedButton.getText());
+        } else if (isOperatorButton(clickedButton)) {
+            n1 = Double.parseDouble(display.getText());
             display.setText("");
-            op='+';
-            point=0;
-        }
-        else if(event.getSource()==minusBtn){
-            n1=Double.parseDouble(display.getText());
-            display.setText("");
-            op='-';
-            point=0;
-        }
-        else if(event.getSource()==modBtn){
-            n1=Double.parseDouble(display.getText());
-            display.setText("");
-            op='%';
-            point=0;
-        }
-        else if(event.getSource()==multBtn){
-            n1=Double.parseDouble(display.getText());
-            display.setText("");
-            op='*';
-            point=0;
-        }
-        else if(event.getSource()==divBtn){
-            n1=Double.parseDouble(display.getText());
-            display.setText("");
-            op='/';
-            point=0;
-        }
-        else if(event.getSource()==equalsBtn){
-            n2=Double.parseDouble(display.getText());
-            switch(op) {
-                case '+' : rs=n1+n2; break;
-                case '-' : rs=n1-n2; break;
-                case '%' : rs=n1%n2; break;
-                case '/' : rs=n1/n2; break;
-                case '*' : rs=n1*n2; break;
-                default : display.setText("Error");
+            op = clickedButton.getText().charAt(0);
+            point = 0;
+        } else if (clickedButton == equalsBtn) {
+            n2 = Double.parseDouble(display.getText());
+            switch (op) {
+                case '+': rs = n1 + n2; break;
+                case '-': rs = n1 - n2; break;
+                case '%': rs = n1 % n2; break;
+                case '/': rs = n1 / n2; break;
+                case '*': rs = n1 * n2; break;
+                default: display.setText("Error");
             }
             display.setText(String.valueOf(rs));
         }
+    }
 
+    private boolean isDigitButton(Button button) {
+        return button == btn0 || button == btn1 || button == btn2 ||
+                button == btn3 || button == btn4 || button == btn5 ||
+                button == btn6 || button == btn7 || button == btn8 || button == btn9;
+    }
 
+    private void handleDigitButton(String digit) {
+        String currentText = display.getText();
+
+        if (currentText.equals("0")) {
+            display.setText(digit);
+        } else {
+            display.setText(currentText + digit);
+        }
+    }
+
+    private boolean isOperatorButton(Button button) {
+        return button == plusBtn || button == minusBtn || button == modBtn ||
+                button == multBtn || button == divBtn;
     }
 
 
