@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import java.net.URL?>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gradovisvijeta.GlavnaController">
+   <stylesheets>
+      <URL value="@validacija.css"/>
+   </stylesheets>
+   <right>
+      <VBox prefHeight="400.0" prefWidth="120.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnDodajGrad" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#dodajGrad" text="Dodaj grad">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="3.0" left="3.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnDodajDrzavu" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#dodajDrzavu" text="Dodaj državu">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="3.0" left="3.0" right="5.0" top="3.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnIzmijeniGrad" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#izmijeniGrad" text="Izmijeni grad">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="3.0" left="3.0" right="5.0" top="3.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="btnObrisiGrad" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#obrisiGrad" text="Obriši grad">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="3.0" left="3.0" right="5.0" top="3.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </right>
+   <center>
+      <TableView fx:id="tableViewGradovi" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="colGradId" prefWidth="52.0" text="ID" />
+          <TableColumn fx:id="colGradNaziv" prefWidth="151.0" text="Naziv" />
+            <TableColumn fx:id="colGradStanovnika" prefWidth="117.0" text="Broj stanovnika" />
+            <TableColumn fx:id="colGradDrzava" prefWidth="148.0" text="Država" />
+        </columns>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+      </TableView>
+   </center>
+</BorderPane>
