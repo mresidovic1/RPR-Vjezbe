@@ -34,4 +34,9 @@ public class Grad {
     public void setDrzava(String drzava) {
         this.drzava = drzava;
     }
+
+    @Override
+    public String toString() {
+        return naziv;
+    }
 }

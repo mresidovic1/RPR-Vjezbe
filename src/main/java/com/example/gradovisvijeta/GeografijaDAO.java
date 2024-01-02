@@ -51,6 +51,21 @@ public class GeografijaDAO {
         return gradovi;
     }
 
+    public ArrayList<Drzava> drzave(){
+        ArrayList<Drzava> drzave=new ArrayList<>();
+        try(Statement statement=connection.createStatement()){
+            ResultSet resultSet= statement.executeQuery("SELECT * FROM drzava ORDER BY 1 ASC");
+            while(resultSet.next()){
+                String drzava=resultSet.getString("naziv");
+                drzave.add(new Drzava(drzava));
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+        return drzave;
+    }
+
     public Grad glavniGrad(String drzava){
         try(PreparedStatement preparedStatement=connection.prepareStatement("SELECT * FROM grad WHERE drzava=?")){
             preparedStatement.setString(1,drzava);
@@ -108,6 +123,17 @@ public class GeografijaDAO {
             e.printStackTrace();
         }
     }
+
+    public void izmijeniDrzavu(Drzava drzava){
+        try(PreparedStatement preparedStatement=connection.prepareStatement("UPDATE drzava SET naziv=?")){
+            preparedStatement.setString(1, drzava.getNaziv());
+            preparedStatement.executeUpdate();
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
+
     public Drzava nadjiDrzavu(String drzava){
         try(PreparedStatement preparedStatement=connection.prepareStatement("SELECT * FROM drzava WHERE naziv=?")){
             preparedStatement.setString(1,drzava);

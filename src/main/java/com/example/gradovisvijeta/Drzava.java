@@ -10,4 +10,9 @@ public class Drzava {
     public String getNaziv(){
         return naziv;
     }
+
+    @Override
+    public String toString() {
+        return naziv;
+    }
 }
